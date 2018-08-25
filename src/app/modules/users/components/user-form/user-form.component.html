@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="card col-md-12 mt-3 mx-auto">
+    <div class="card-body">
+
+      <form [formGroup]="form">
+        <div class="form-group">
+          <label for="exampleInputEmail1">Name</label>
+          <input type="email" class="form-control" formControlName="name" aria-describedby="emailHelp" placeholder="Enter name">
+          <small class="text-danger" *ngIf="formErrors.name">
+            <i class="fa fa-times"></i> {{formErrors.name}}
+          </small>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Job</label>
+          <input type="text" class="form-control" placeholder="Job" formControlName="job">
+          <small class="text-danger" *ngIf="formErrors.job">
+            <i class="fa fa-times"></i> {{formErrors.job}}
+          </small>
+        </div>
+        <button (click)="onSubmitClick(selectedUser?'Update':'Add')" [disabled]="form.pristine || !form.valid " class="btn btn-primary float-right">
+          {{selectedUser?'Update':'Add'}}</button>
+        <button routerLink="/users" style="margin-right: 5px;" class="btn btn-default float-right">Cancel</button>
+      </form>
+    </div>
+  </div>
+</div>

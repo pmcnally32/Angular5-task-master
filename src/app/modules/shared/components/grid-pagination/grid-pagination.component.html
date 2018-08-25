@@ -1,0 +1,21 @@
+<div *ngIf="pagingInfo" class="row">
+    <div class="col-lg-8">
+        <ngb-pagination class="float-left" [collectionSize]="pagingInfo.count" 
+        [pageSize]="pagingInfo.pageSize" [boundaryLinks]="true" [maxSize]="8"
+        [page]="pagingInfo.pageIndex" (pageChange)="currentPageChange($event)"></ngb-pagination>
+    
+    </div>
+  
+      <div class="col-lg-4"  *ngIf="pagingInfo.count > 0">
+         <span class="float-right">
+           {{ 'Page Size' }} 
+               <label class="form select">
+                   <select class="form-control input-xs" [ngModel]="pagingInfo.pageSize" (ngModelChange)="onPageSizeChange($event)">
+                     <option [ngValue]="4">4</option>
+                     <option [ngValue]="8">8</option>
+                     <option [ngValue]="-1">All</option>
+                   </select>  
+                   <i></i> </label>
+         </span>
+       </div>
+  </div>

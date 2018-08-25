@@ -1,0 +1,35 @@
+<table class="table" *ngIf="list">
+  <thead>
+    <tr>
+      <th>Avatar</th>
+      <th>Firstname</th>
+      <th>Lastname</th>
+      <th>View</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of list">
+      <td>
+        <img class="circImage" [src]="user.avatar" /> </td>
+      <td>{{user.first_name}}</td>
+      <td>{{user.last_name}}</td>
+      <td>
+        <a class="actionButton" (click)="gridAction('view',user)">
+          <i class="fa fa-address-card"></i>
+        </a>
+      </td>
+      <td>
+        <a class="actionButton" (click)="gridAction('edit',user)">
+          <i class="fa fa-edit"></i>
+        </a>
+      </td>
+      <td>
+        <a class="actionButton" (click)="gridAction('delete',user)">
+          <i class="fa fa-trash-alt"></i>
+        </a>
+      </td>
+    </tr>
+  </tbody>
+</table>

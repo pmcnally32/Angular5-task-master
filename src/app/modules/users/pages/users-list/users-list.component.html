@@ -1,0 +1,11 @@
+<div class="container">
+  <h2>Users List</h2>
+
+  <button type="button" style="margin-bottom:10px" (click)="doAction('new',{id:-1})" class="btn btn-primary float-right">Create User</button>
+  <app-users-grid [list]="usersList$ | async" (doAction)="doAction($event.action,$event.item)">
+
+  </app-users-grid>
+  <app-grid-pagination [pagingInfo]="PageInfo$ | async" (pageChange)="onPageChange($event)" (pageSizeChange)="onPageSizeChange($event)">
+
+  </app-grid-pagination>
+</div>

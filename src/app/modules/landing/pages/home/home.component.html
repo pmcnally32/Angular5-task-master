@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row" *ngIf="(LoggedInUser$ | async) as user">
+    <h4>Welcome {{user.name || user.first_name || user.email}}</h4>
+    <div class="col-lg-12">
+      <p>Hello, This Angular 5 App consumes
+        <a href="https://reqres.in/"> (https://reqres.in/) </a> RESTful web services to have the users page with the CRUD Operations, the Header desgin
+        and the login page design is from a starter template based on simple styles and bootstrap, otherwise of that, everything
+        developed from scratch.
+      </p>
+    </div>
+
+    <div class="col-lg-12 row">
+
+      <div class="col-lg-8">
+        <h5>Features</h5>
+        <ul class="list-group">
+          <li class="list-group-item">Login (Routing Guard)</li>
+          <li class="list-group-item">Users list with pagination</li>
+          <li class="list-group-item">CRUD Operations (Add/Update/Delete) User</li>
+          <li class="list-group-item">Modules Lazy Loading</li>
+          <li class="list-group-item">(State Management) REDUX</li>
+          <li class="list-group-item">(Loading Spinner Interceptor) ng http loader</li>
+          <li class="list-group-item">(Notifications) Toastr</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
